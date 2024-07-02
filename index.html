@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário de Personalidade MBTI</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #C0E0DE;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-group button {
+            background-color: #162521;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #4F7CAC;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Questionário de Personalidade MBTI</h1>
+
+<form action="/resultado" method="post">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+            <option value="prefiro_nao_dizer">Prefiro não dizer</option>
+        </select>
+    </div>
+    
+    <h2>Extroversão (E) / Introversão (I)</h2>
+    <div class="form-group">
+        <label>Sente-se animado ao estar com outras pessoas?</label>
+        <input type="radio" id="extrovertido_sim" name="extroversao_introversao" value="E" required>
+        <label for="extrovertido_sim">Sim</label>
+        <input type="radio" id="extrovertido_nao" name="extroversao_introversao" value="I">
+        <label for="extrovertido_nao">Não</label>
+    </div>
+
+    <h2>Sensação (S) / Intuição (N)</h2>
+    <div class="form-group">
+        <label>Prefere fatos concretos em vez de ideias abstratas?</label>
+        <input type="radio" id="sensacao_sim" name="sensacao_intuicao" value="S" required>
+        <label for="sensacao_sim">Sim</label>
+        <input type="radio" id="sensacao_nao" name="sensacao_intuicao" value="N">
+        <label for="sensacao_nao">Não</label>
+    </div>
+    
+    <h2>Pensamento (T) / Sentimento (F)</h2>
+    <div class="form-group">
+        <label>Toma decisões com maior base na lógica do que nos sentimentos?</label>
+        <input type="radio" id="pensamento_sim" name="pensamento_sentimento" value="T" required>
+        <label for="pensamento_sim">Sim</label>
+        <input type="radio" id="pensamento_nao" name="pensamento_sentimento" value="F">
+        <label for="pensamento_nao">Não</label>
+    </div>
+    
+    <h2>Julgamento (J) / Perceção (P)</h2>
+    <div class="form-group">
+        <label>Costumas planear o teu dia a dia?</label>
+        <input type="radio" id="julgamento_sim" name="julgamento_percepcao" value="J" required>
+        <label for="julgamento_sim">Sim</label>
+        <input type="radio" id="julgamento_nao" name="julgamento_percepcao" value="P">
+        <label for="julgamento_nao">Não</label>
+    </div>
+
+    <div class="form-group">
+        <label>Como lidas com situações stressantes?</label>
+        <textarea id="lidar_estresse" name="lidar_estresse" rows="4" required></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label>Quais são os teus hobbies?</label>
+        <input type="checkbox" id="hobby_leitura" name="hobbies[]" value="leitura">
+        <label for="hobby_leitura">Leitura</label>
+        <input type="checkbox" id="hobby_esportes" name="hobbies[]" value="esportes">
+        <label for="hobby_esportes">Desporto</label>
+        <input type="checkbox" id="hobby_viagens" name="hobbies[]" value="viagens">
+        <label for="hobby_viagens">Viagens</label>
+        <input type="checkbox" id="hobby_artes" name="hobbies[]" value="artes">
+        <label for="hobby_artes">Artes</label>
+    </div>
+    
+    <div class="form-group">
+        <label>Descreve a tua personalidade em poucas palavras:</label>
+        <textarea id="descricao_personalidade" name="descricao_personalidade" rows="4" required></textarea>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
+</body>
+</html>
