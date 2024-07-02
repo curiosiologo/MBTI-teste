@@ -8,9 +8,6 @@ def index():
 
 @app.route('/resultado', methods=['POST'])
 def resultado():
-    nome = request.form['nome']
-    idade = request.form['idade']
-    genero = request.form['genero']
 
     extroversao_introversao = request.form['extroversao_introversao']
     sensacao_intuicao = request.form['sensacao_intuicao']
@@ -21,8 +18,5 @@ def resultado():
 
     return f"""
     <h1>Resultado do MBTI</h1>
-    <p>Nome: {nome}</p>
-    <p>Idade: {idade}</p>
-    <p>Gênero: {genero}</p>
     <p>Seu tipo MBTI é: {mbti}</p>
     """
