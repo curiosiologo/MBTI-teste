@@ -1,5 +1,7 @@
 # MBTI Teste
 
+    http://curiosiologo.pythonanywhere.com/
+
 ## Instalação
 
     pip install flask
